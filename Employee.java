@@ -1,8 +1,26 @@
-public class Employee {
+
+//  Class = models an object
+// object => instance of a class
+
+// Employee => super class 
+public class Employee {///////////////////////////////////////////////////////////////////////////
     private int id;
     int age;
     String name;
 
+    public static void main(String[] args) {
+        Employee new_employee = new Employee(23456, "Wamae", 50);
+        new_employee.work();
+        Employee second_employee = new Employee(409869, "Brian", 40);
+        second_employee.work();
+
+        Manager new_manager = new Manager(12345, "John Doe", 32, "IT");
+        new_manager.work();
+        new_manager.attendBOM();
+
+    }
+
+    // constructor method
     public Employee(int id_no, String name, int age) {
         this.id = id_no;
         this.age = age;
@@ -23,7 +41,7 @@ public class Employee {
     }
 
     public void work() {
-        System.out.println("Working...");
+        System.out.println(this.name + " working...");
     }
 
     public void checkSalary() {
@@ -35,6 +53,7 @@ public class Employee {
     }
 }
 
+// Manager => sub class/child
 class Manager extends Employee {
     String level = "senior";
     String department;
